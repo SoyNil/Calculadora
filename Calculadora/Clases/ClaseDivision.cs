@@ -8,11 +8,14 @@ namespace Calculadora.Clases
 {
     internal class ClaseDivision
     {
-        public double Division(double n1, double n2)
+        public double Division(double primero, double segundo)
         {
-            double S;
-            S = n1 / n2;
-            return S;
+            if (segundo == 0)
+            {
+                // Manejar el caso de división por cero
+                throw new DivideByZeroException("No se puede dividir por cero.");
+            }
+            return primero / segundo;
         }
     }
 }

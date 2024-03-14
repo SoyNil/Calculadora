@@ -257,6 +257,7 @@
             this.pantalla.Size = new System.Drawing.Size(217, 60);
             this.pantalla.TabIndex = 18;
             this.pantalla.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.pantalla.TextChanged += new System.EventHandler(this.pantalla_TextChanged);
             // 
             // Calculadora
             // 
