@@ -116,5 +116,47 @@ namespace Calculadora
             primero = double.Parse(pantalla.Text);
             pantalla.Clear();
         }
+
+        private void botonigual_Click(object sender, EventArgs e)
+        {
+            segundo=double.Parse(pantalla.Text);
+            double Sum;
+            double Res;
+            double Mul;
+            double Div;
+            switch(operador)
+            {
+                case "+":
+                    Sum = obj.Sumar((primero), (segundo));
+                    pantalla.Text=Sum.ToString();
+                    break;
+                case "-":
+                    Res=obj2.Resta((primero), (segundo));
+                    pantalla.Text = Res.ToString();
+                    break;
+                case "*":
+                    Mul=obj3.Multiplicacion((primero), (segundo));
+                    pantalla.Text=Mul.ToString();
+                    break;
+                case "/":
+                    Div=obj4.Division((primero), (segundo));
+                    pantalla.Text=(Div.ToString());
+                    break;
+            }
+
+        }
+
+        private void botonborrar_Click(object sender, EventArgs e)
+        {
+            pantalla.Clear();
+        }
+
+        private void botoneliminar_Click(object sender, EventArgs e)
+        {
+            if (pantalla.Text.Length == 1) 
+                pantalla.Text = "";
+            else
+                pantalla.Text = pantalla.Text.Substring(0, pantalla.Text.Length - 1);
+        }
     }
 }
